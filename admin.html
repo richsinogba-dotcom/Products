@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — Rolex Cinematic</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <!-- LOGIN -->
+    <div class="login-wrap" id="loginWrap">
+      <div class="login-card">
+        <div class="crown">♛</div>
+        <h1>ADMIN <span>CONSOLE</span></h1>
+        <p class="muted">
+          Cinematic collection manager<br /><small
+            >Demo credentials — user: <b>admin</b> / pass:
+            <b>rolex123</b></small
+          >
+        </p>
+        <input id="uName" placeholder="Username" autocomplete="username" />
+        <input
+          id="uPass"
+          type="password"
+          placeholder="Password"
+          autocomplete="current-password"
+        />
+        <button id="loginBtn">Unlock Dashboard →</button>
+        <p class="err" id="loginErr"></p>
+        <a href="index.html" class="back">← Back to site</a>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dash" id="dash" hidden>
+      <aside class="side">
+        <div class="brand">♛ ROLEX <span>ADMIN</span></div>
+        <button class="slink active" data-tab="products">◈ Products</button>
+        <button class="slink" data-tab="orders">◉ Orders / Bag</button>
+        <button class="slink" data-tab="settings">⚙ Settings</button>
+        <div class="side-foot">
+          <a href="index.html">← View site</a
+          ><button id="logout">Logout</button>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="top">
+          <div>
+            <h2 id="tabTitle">Products</h2>
+            <p class="muted" id="tabSub">
+              Manage cinematic collection — stored in browser localStorage.
+            </p>
+          </div>
+          <div class="top-actions">
+            <button id="exportBtn" class="btn ghost">Export JSON</button
+            ><button id="resetBtn" class="btn ghost">Reset defaults</button
+            ><button id="addBtn" class="btn gold">+ Add Watch</button>
+          </div>
+        </header>
+
+        <section class="stats" id="statsRow"></section>
+
+        <section class="panel" id="tab-products">
+          <div class="toolbar">
+            <input id="aSearch" placeholder="Search products…" /><select
+              id="aFilter"
+            >
+              <option value="all">All categories</option>
+              <option value="sport">sport</option>
+              <option value="classic">classic</option>
+              <option value="prestige">prestige</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Watch</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Badge</th>
+                  <th style="text-align: right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="aBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel" id="tab-orders" hidden>
+          <h3>Live bag snapshot (this browser)</h3>
+          <div id="ordersBox"></div>
+          <div class="row-btns">
+            <button class="btn ghost" id="refreshOrders">Refresh</button
+            ><button class="btn ghost" id="clearOrders">Clear bag</button>
+          </div>
+        </section>
+
+        <section class="panel" id="tab-settings" hidden>
+          <h3>Site settings</h3>
+          <label class="set"
+            ><span>Announcement bar</span
+            ><input id="setAnnounce" placeholder="Announcement text"
+          /></label>
+          <label class="set"
+            ><span>Hero subtitle</span
+            ><input id="setHero" placeholder="Hero subtitle override"
+          /></label>
+          <label class="check"
+            ><input type="checkbox" id="setAnim" checked /> Enable scroll
+            animations (adds class to &lt;body&gt;)</label
+          >
+          <div class="row-btns">
+            <button class="btn gold" id="saveSettings">Save settings</button>
+          </div>
+          <p class="muted">
+            <small
+              >Settings key: <code>cinematic_rolex_settings_v1</code> — read by
+              storefront on load.</small
+            >
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- EDITOR MODAL -->
+    <div class="modal" id="editModal">
+      <div class="modal-card">
+        <h3 id="editTitle">Add Watch</h3>
+        <div class="grid">
+          <label>Name<input id="fName" /></label>
+          <label
+            >Category<select id="fCat">
+              <option value="sport">sport</option>
+              <option value="classic">classic</option>
+              <option value="prestige">prestige</option>
+            </select></label
+          >
+          <label>Price (USD)<input id="fPrice" type="number" min="1" /></label>
+          <label>Badge<input id="fBadge" placeholder="Icon / New / …" /></label>
+        </div>
+        <label>Image URL<input id="fImg" placeholder="https://…" /></label>
+        <div class="img-prev">
+          <img id="fPrev" alt="" />
+          <div class="quick-pick" id="quickPick"></div>
+        </div>
+        <label>Description<textarea id="fDesc" rows="3"></textarea></label>
+        <div class="row-btns">
+          <button class="btn ghost" id="editCancel">Cancel</button
+          ><button class="btn gold" id="editSave">Save Watch</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="admin.js"></script>
+  </body>
+</html>

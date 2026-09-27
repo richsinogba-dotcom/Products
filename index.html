@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ROLEX — Cinematic Parallax Experience</title>
+<meta name="description" content="A cinematic parallax tribute to timeless luxury watchmaking." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pre-inner">
+    <div class="pre-crown">♛</div>
+    <div class="pre-logo">ROLEX</div>
+    <div class="pre-sub">CINEMATIC PARALLAX</div>
+    <div class="pre-bar"><span id="preBarFill"></span></div>
+    <div class="pre-count"><span id="preCount">0</span>%</div>
+  </div>
+</div>
+
+<div class="scroll-progress"><span id="progressFill"></span></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="announce" id="announce">Complimentary engraving on Day-Date models — Until Oct 15 &nbsp; ✦ &nbsp; <a href="#collection">Explore Collection</a></div>
+
+<header id="nav">
+  <a href="#" class="brand">♛ ROLEX <span>CONCEPT</span></a>
+  <nav class="links">
+    <a href="#heritage">Heritage</a>
+    <a href="#collection">Collection</a>
+    <a href="#craft">Craft</a>
+    <a href="#cinematic">Film</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+    <button class="icon-btn cart-btn" id="cartOpen" aria-label="Cart">◈ <span class="cart-count" id="cartCount">0</span></button>
+    <a href="admin.html" class="btn small ghost">Admin</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#heritage">Heritage</a>
+  <a href="#collection">Collection</a>
+  <a href="#craft">Craft</a>
+  <a href="#cinematic">Film</a>
+  <a href="#contact">Contact</a>
+  <a href="admin.html">Admin Panel →</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" data-parallax-wrap>
+    <img data-speed="0.35" src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1920&auto=format&fit=crop" alt="Gold luxury watch" id="heroImg">
+    <div class="hero-veil"></div>
+    <div class="hero-grain"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow reveal">Est. 1905 — Genève • Cinematic Edition</p>
+    <h1 class="hero-title">
+      <span class="line"><span>TIME</span></span>
+      <span class="line outline"><span>LESS</span></span>
+    </h1>
+    <p class="hero-sub reveal">Scroll-driven parallax. Swiss precision. A film you can feel — <em>crafted second by second.</em></p>
+    <div class="hero-cta reveal">
+      <a href="#collection" class="btn gold magnetic">Explore Collection</a>
+      <a href="#cinematic" class="btn ghost magnetic">▶ Watch Film</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div>Scroll<br><span class="scroll-line"></span><br>01 / 07</div>
+    <div class="hero-side">Oyster Perpetual — 41mm<br>Oystersteel & Gold</div>
+  </div>
+  <div class="hero-big-fade" data-speed-text>ROLEX ROLEX</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee-track" id="marqueeTrack">
+  <span>SUBMARINER ✦ DAYTONA ✦ DATEJUST ✦ GMT-MASTER II ✦ DAY-DATE ✦ SEA-DWELLER ✦ OYSTER PERPETUAL ✦&nbsp;</span>
+  <span>SUBMARINER ✦ DAYTONA ✦ DATEJUST ✦ GMT-MASTER II ✦ DAY-DATE ✦ SEA-DWELLER ✦ OYSTER PERPETUAL ✦&nbsp;</span>
+</div></div>
+
+<!-- HERITAGE -->
+<section class="section heritage" id="heritage">
+  <div class="container grid2">
+    <div>
+      <p class="eyebrow">01 — Heritage</p>
+      <h2 class="h2 reveal-text">A century carved<br><em>in steel & gold.</em></h2>
+      <p class="lead">From Hans Wilsdorf's workshop in 1905 to the deepest oceans and highest peaks — every Rolex is a story of endurance. This concept site re-tells that story with depth, motion, and light.</p>
+      <div class="stats">
+        <div class="stat"><b data-count="120">0</b><span>Years of Craft</span></div>
+        <div class="stat"><b data-count="4000">0</b><span>Tests per Movement</span></div>
+        <div class="stat"><b data-count="70">0</b><span>Hours Power Reserve</span></div>
+      </div>
+      <a href="#craft" class="link-arrow">Discover the craft →</a>
+    </div>
+    <div class="heritage-imgs">
+      <div class="img-card tall parallax-img"><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1000&auto=format&fit=crop" alt="Chronograph detail"><label>Calibre 4131 — Daytona</label></div>
+      <div class="img-card short parallax-img"><img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1000&auto=format&fit=crop" alt="Classic watch"><label>Oyster Classic — 1954</label></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="section collection" id="collection">
+  <div class="container">
+    <div class="sec-head">
+      <div><p class="eyebrow">02 — The Collection</p>
+      <h2 class="h2">Icons, <em>re-lit for cinema.</em></h2></div>
+      <div class="filters" id="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="sport">Sport</button>
+        <button class="chip" data-filter="classic">Classic</button>
+        <button class="chip" data-filter="prestige">Prestige</button>
+      </div>
+    </div>
+    <div class="search-row"><input id="searchInput" placeholder="Search references… e.g. Submariner, Daytona, Gold"><span id="resultCount"></span></div>
+    <div class="product-grid" id="productGrid"><!-- rendered by JS --></div>
+  </div>
+</section>
+
+<!-- CINEMATIC BREAKER -->
+<section class="cinematic" id="cinematic">
+  <div class="cine-bg"><img id="cineImg" src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=1920&auto=format&fit=crop" alt="Diver watch cinematic"></div>
+  <div class="cine-veil"></div>
+  <div class="container cine-content">
+    <p class="eyebrow light">03 — The Film</p>
+    <h2 class="cine-title"><span data-cine>CINEMATIC</span><br><span class="outline-light" data-cine>PRECISION</span></h2>
+    <p class="cine-sub">Every scroll is a dolly move. Every section, a scene. Shot in available darkness — graded in gold.</p>
+    <button class="btn gold magnetic" id="playFilm">▶ Play Showreel</button>
+  </div>
+  <div class="film-letterbox top"></div><div class="film-letterbox bottom"></div>
+</section>
+
+<!-- CRAFT / HORIZONTAL-STICKY -->
+<section class="section craft" id="craft">
+  <div class="container">
+    <p class="eyebrow">04 — Craftsmanship</p>
+    <h2 class="h2">Engineered like<br><em>a film set — nothing moves by accident.</em></h2>
+    <div class="craft-cards">
+      <article class="craft-card reveal"><div class="num">01</div><h3>Oystersteel</h3><p>904L superalloy, polished for 3 hours per case. Corrosion-proof, light-hungry, mirror-grade.</p><img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=800&auto=format&fit=crop" alt="Steel"></article>
+      <article class="craft-card reveal"><div class="num">02</div><h3>Calibre Movement</h3><p>-2/+2 seconds per day. Parachrom hairspring. 70-hour reserve. Tested beyond COSC.</p><img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?q=80&w=800&auto=format&fit=crop" alt="Movement"></article>
+      <article class="craft-card reveal"><div class="num">03</div><h3>Deep-Sea Proof</h3><p>Tested to 3,900m. Ringlock system. Helium valve. Built for pressure — on screen and at sea.</p><img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?q=80&w=800&auto=format&fit=crop" alt="Dive"></article>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE SLIDER -->
+<section class="section showcase">
+  <div class="container grid2">
+    <div class="show-main parallax-img"><img id="showImg" src="https://images.unsplash.com/photo-1594534475808-b18fc33b045e?q=80&w=1200&auto=format&fit=crop" alt="Showcase"><div class="show-caption"><b id="showName">Day-Date 40</b><span id="showPrice">$38,500</span></div></div>
+    <div>
+      <p class="eyebrow">05 — Showcase</p>
+      <h2 class="h2">One light.<br><em>One watch. No noise.</em></h2>
+      <div class="show-list" id="showList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="quoteSec">
+  <div class="container">
+    <div class="big-quote reveal-text">“It doesn't just tell time.<br>It tells <em>history.”</em></div>
+    <p class="quote-by">— Cinematic Horology Journal, 2026</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container grid2">
+    <div>
+      <p class="eyebrow">06 — Private Viewing</p>
+      <h2 class="h2">Book your<br><em>cinematic fitting.</em></h2>
+      <p class="lead">Boutique appointments, concierge delivery, and trade enquiries. We reply within 24 hours.</p>
+      <ul class="contact-list"><li>✦ Fifth Avenue Boutique — New York</li><li>✦ +1 (212) 555-0190</li><li>✦ concierge@rolex-concept.demo</li></ul>
+    </div>
+    <form class="form" id="contactForm">
+      <div class="row"><input required placeholder="Full name" id="cName"><input required type="email" placeholder="Email" id="cEmail"></div>
+      <select id="cInterest"><option>Submariner Date</option><option>Cosmograph Daytona</option><option>Day-Date 40</option><option>Private Viewing</option></select>
+      <textarea required placeholder="Message — wrist size, preferred metal, date…" rows="4"></textarea>
+      <button class="btn gold" type="submit">Request Appointment</button>
+      <p class="form-ok" id="formOk">✓ Request received. Our concierge will contact you.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot-grid">
+    <div><div class="brand">♛ ROLEX <span>CONCEPT</span></div><p class="muted">Unofficial cinematic concept for demonstration only. Not affiliated with Rolex SA.</p></div>
+    <div><b>Explore</b><a href="#heritage">Heritage</a><a href="#collection">Collection</a><a href="#craft">Craft</a></div>
+    <div><b>Studio</b><a href="admin.html">Admin Panel</a><a href="#cinematic">Showreel</a><a href="#contact">Contact</a></div>
+    <div><b>Newsletter</b><div class="news"><input id="newsInput" placeholder="Email for drops"><button id="newsBtn">→</button></div><small id="newsOk"></small></div>
+  </div>
+  <div class="foot-base">© 2026 Cinematic Horology — Built with HTML/CSS/JS + GSAP Parallax</div>
+</footer>
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal" id="quickModal"><div class="modal-card">
+  <button class="modal-x" id="modalClose">✕</button>
+  <div class="modal-grid"><img id="mImg" alt=""><div><p class="eyebrow" id="mCat"></p><h3 id="mName"></h3><p class="m-price" id="mPrice"></p><p class="muted" id="mDesc"></p><div class="m-row"><div class="qty"><button id="qMinus">−</button><span id="qVal">1</span><button id="qPlus">+</button></div><button class="btn gold" id="mAdd">Add to Bag</button></div></div></div>
+</div></div>
+
+<!-- CART -->
+<div class="cart-veil" id="cartVeil"></div>
+<aside class="cart" id="cartDrawer">
+  <div class="cart-head"><b>Your Bag (<span id="cartN">0</span>)</b><button id="cartClose">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot"><div class="total"><span>Subtotal</span><b id="cartTotal">$0</b></div><button class="btn gold full" id="checkoutBtn">Checkout →</button><button class="link" id="clearCart">Clear bag</button></div>
+</aside>
+
+<!-- FILM OVERLAY -->
+<div class="film-overlay" id="filmOverlay"><button id="filmClose">✕ Close</button><div class="film-frame"><p class="eyebrow light">SHOWREEL — 00:47</p><h2>Every second,<br><em>graded in gold.</em></h2><div class="film-strip"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=800&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?q=80&w=800&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800&auto=format&fit=crop" alt=""></div><p class="muted">Concept cut — replace with your MP4 by setting &lt;video&gt; src in app.js</p></div></div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
